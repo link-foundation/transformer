@@ -1,0 +1,20 @@
+[package]
+name = "lino-transformer"
+version = "0.1.0"
+edition = "2021"
+description = "A rule-based, Turing-complete structural transformer for Links Notation (LiNo)"
+license = "Unlicense"
+repository = "https://github.com/link-foundation/transformer"
+keywords = ["lino", "links", "notation", "rewriting", "transformer"]
+categories = ["parsing", "text-processing"]
+
+[lib]
+name = "lino_transformer"
+path = "src/lib.rs"
+
+[[bin]]
+name = "lino-transformer"
+path = "src/bin/lino_transformer.rs"
+
+[dependencies]
+links-notation = "0.13"
