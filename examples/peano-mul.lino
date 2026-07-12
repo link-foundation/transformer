@@ -1,0 +1,17 @@
+(programVersion: 1)
+(rule:
+  (name: mul-zero)
+  (match: (mul z $b))
+  (replace: z))
+(rule:
+  (name: mul-succ)
+  (match: (mul (s $a) $b))
+  (replace: (add $b (mul $a $b))))
+(rule:
+  (name: add-zero)
+  (match: (add z $b))
+  (replace: $b))
+(rule:
+  (name: add-succ)
+  (match: (add (s $a) $b))
+  (replace: (s (add $a $b))))

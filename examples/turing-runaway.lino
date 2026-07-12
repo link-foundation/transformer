@@ -1,0 +1,9 @@
+(programVersion: 1)
+(rule:
+  (name: R-right-empty)
+  (match: (tm $left R 0 e))
+  (replace: (tm (c 1 $left) R 0 e)))
+(rule:
+  (name: R-right-cons)
+  (match: (tm $left R 0 (c $h $r)))
+  (replace: (tm (c 1 $left) R $h $r)))

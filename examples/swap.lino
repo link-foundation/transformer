@@ -1,0 +1,6 @@
+(programVersion: 1)
+(rule:
+  (name: swap)
+  (maxApplications: 1)
+  (match: ($x before $y))
+  (replace: ($y before $x)))

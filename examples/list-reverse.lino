@@ -1,0 +1,13 @@
+(programVersion: 1)
+(rule:
+  (name: reverse-start)
+  (match: (reverse $list))
+  (replace: (rev $list e)))
+(rule:
+  (name: rev-done)
+  (match: (rev e $acc))
+  (replace: $acc))
+(rule:
+  (name: rev-step)
+  (match: (rev (c $head $tail) $acc))
+  (replace: (rev $tail (c $head $acc))))
