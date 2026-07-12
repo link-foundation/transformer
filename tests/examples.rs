@@ -26,8 +26,11 @@ fn swap_reorders_once() {
 #[test]
 fn peano_addition_computes_two_plus_one() {
     // add(2, 1) = 3, encoded in unary as nested successors.
-    let (graph, stop, steps) =
-        run("peano-add.lino", "(add (s (s z)) (s z))", Options::bounded());
+    let (graph, stop, steps) = run(
+        "peano-add.lino",
+        "(add (s (s z)) (s z))",
+        Options::bounded(),
+    );
     assert_eq!(graph, "(s (s (s z)))");
     assert_eq!(stop, StopReason::NormalForm);
     assert_eq!(steps, 3);
@@ -47,8 +50,11 @@ fn peano_multiplication_computes_two_times_three() {
 
 #[test]
 fn list_reverse_reverses_three_elements() {
-    let (graph, stop, steps) =
-        run("list-reverse.lino", "(reverse (c a (c b (c c e))))", Options::bounded());
+    let (graph, stop, steps) = run(
+        "list-reverse.lino",
+        "(reverse (c a (c b (c c e))))",
+        Options::bounded(),
+    );
     assert_eq!(graph, "(c c (c b (c a e)))");
     assert_eq!(stop, StopReason::NormalForm);
     assert_eq!(steps, 5);

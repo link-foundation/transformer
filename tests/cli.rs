@@ -47,8 +47,10 @@ fn run_swap_prints_result_and_succeeds() {
 
 #[test]
 fn check_reports_rule_count() {
-    let (stdout, _stderr, code) =
-        run_cli(&["check", "--program", &example_path("turing-bb2.lino")], "");
+    let (stdout, _stderr, code) = run_cli(
+        &["check", "--program", &example_path("turing-bb2.lino")],
+        "",
+    );
     assert!(stdout.contains("8 rules"));
     assert_eq!(code, 0);
 }
@@ -75,8 +77,7 @@ fn compile_error_uses_exit_code_two() {
     let dir = std::env::temp_dir();
     let path = dir.join("lino_cli_bad_program.lino");
     std::fs::write(&path, "(rule: (match: ($x)) (replace: ($y)))").unwrap();
-    let (_stdout, stderr, code) =
-        run_cli(&["run", "--program", path.to_str().unwrap()], "(a)");
+    let (_stdout, stderr, code) = run_cli(&["run", "--program", path.to_str().unwrap()], "(a)");
     assert!(stderr.contains("did not compile"));
     assert_eq!(code, 2);
 }
