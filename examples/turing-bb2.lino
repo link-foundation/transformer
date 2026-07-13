@@ -1,0 +1,33 @@
+(programVersion: 1)
+(rule:
+  (name: A0-right-empty)
+  (match: (tm $left A 0 e))
+  (replace: (tm (c 1 $left) B 0 e)))
+(rule:
+  (name: A0-right-cons)
+  (match: (tm $left A 0 (c $h $r)))
+  (replace: (tm (c 1 $left) B $h $r)))
+(rule:
+  (name: A1-left-empty)
+  (match: (tm e A 1 $right))
+  (replace: (tm e B 0 (c 1 $right))))
+(rule:
+  (name: A1-left-cons)
+  (match: (tm (c $h $r) A 1 $right))
+  (replace: (tm $r B $h (c 1 $right))))
+(rule:
+  (name: B0-left-empty)
+  (match: (tm e B 0 $right))
+  (replace: (tm e A 0 (c 1 $right))))
+(rule:
+  (name: B0-left-cons)
+  (match: (tm (c $h $r) B 0 $right))
+  (replace: (tm $r A $h (c 1 $right))))
+(rule:
+  (name: B1-right-empty)
+  (match: (tm $left B 1 e))
+  (replace: (tm (c 1 $left) H 0 e)))
+(rule:
+  (name: B1-right-cons)
+  (match: (tm $left B 1 (c $h $r)))
+  (replace: (tm (c 1 $left) H $h $r)))

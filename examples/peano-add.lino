@@ -1,0 +1,9 @@
+(programVersion: 1)
+(rule:
+  (name: add-zero)
+  (match: (add z $b))
+  (replace: $b))
+(rule:
+  (name: add-succ)
+  (match: (add (s $a) $b))
+  (replace: (s (add $a $b))))
