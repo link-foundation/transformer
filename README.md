@@ -111,6 +111,11 @@ The evidence, complete requirement catalogue, architecture, alternatives, and
 delivery plan are captured in the
 [issue 1 case study](docs/case-studies/issue-1/README.md).
 
+## Publishing
+
+Release automation and first-publication setup are documented in
+[Publishing lino-transformer](docs/releasing.md).
+
 ## License
 
 Released into the public domain under the [Unlicense](LICENSE).
